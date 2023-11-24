@@ -1,19 +1,16 @@
 version: 2.1
 
 orbs:
-  android: circleci/android@0.2.1
+  android: circleci/android@1.0.3
 
 jobs:
   build:
-    executor: android/android
+    #executor: android/android
+    docker:
+      - image: cimg/android:2023.08
+
     steps:
       - checkout
-      - run:
-          name: Set JAVA_HOME
-          command: echo 'export JAVA_HOME="C:\Program Files\Java\jdk-17.0.2"' >> $BASH_ENV
-      - run:
-          name: Source BASH_ENV
-          command: source $BASH_ENV
       - restore_cache:
           key: android-orb-v1-
       - run:
