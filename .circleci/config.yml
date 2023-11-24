@@ -8,17 +8,17 @@ jobs:
     executor: android/android
     steps:
       - checkout
-      - restore_cache:
-          key: android-orb-v1-
-      - run:
-          name: Chmod permissions
-          command: sudo chmod +x ./gradlew
       - run:
           name: Set JAVA_HOME
           command: echo 'export JAVA_HOME=/usr/local/openjdk-17' >> $BASH_ENV
       - run:
           name: Source BASH_ENV
           command: source $BASH_ENV
+      - restore_cache:
+          key: android-orb-v1-
+      - run:
+          name: Chmod permissions
+          command: sudo chmod +x ./gradlew
       - run:
           name: Download Dependencies
           command: ./gradlew androidDependencies
