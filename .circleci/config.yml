@@ -10,7 +10,7 @@ jobs:
       - checkout
       - run:
           name: Set JAVA_HOME
-          command: echo 'export JAVA_HOME=/usr/local/openjdk-17' >> $BASH_ENV
+          command: echo 'export JAVA_HOME=/usr/local/android-studio/jre' >> $BASH_ENV
       - run:
           name: Source BASH_ENV
           command: source $BASH_ENV
