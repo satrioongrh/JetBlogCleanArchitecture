@@ -83,6 +83,9 @@
 -keep class * extends com.google.gson.reflect.TypeToken
 -keep public class * implements java.lang.reflect.Type
 
+-keep class java.lang.invoke.StringConcatFactory.**
+
+
 -dontwarn okhttp3.internal.platform.**
 -dontwarn org.bouncycastle.jsse.BCSSLParameters.**
 -dontwarn org.bouncycastle.jsse.BCSSLSocket.**
@@ -93,3 +96,4 @@
 -dontwarn org.openjsse.javax.net.ssl.SSLSocket.**
 -dontwarn org.openjsse.net.ssl.OpenJSSE.**
 -dontwarn org.conscrypt.ConscryptHostnameVerifier.**
+-dontwarn java.lang.invoke.StringConcatFactory.**
