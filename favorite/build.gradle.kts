@@ -40,11 +40,16 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.3"
     }
+    tasks.withType<com.android.build.gradle.internal.tasks.ExtractProguardFiles> {
+        finalizedBy(":favorite:exportReleaseConsumerProguardFiles")
+    }
+
+
 }
 
 dependencies {
     implementation(project(":app"))
-    api(project(":core"))
+    implementation(project(":core"))
 
 
 
