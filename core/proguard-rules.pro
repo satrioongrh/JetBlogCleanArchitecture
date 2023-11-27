@@ -20,3 +20,4 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 -dontwarn java.lang.invoke.StringConcatFactory.**
+-dontwarn kotlinx.serialization.**

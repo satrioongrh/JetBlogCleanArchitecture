@@ -97,3 +97,4 @@
 -dontwarn org.openjsse.net.ssl.OpenJSSE.**
 -dontwarn org.conscrypt.ConscryptHostnameVerifier.**
 -dontwarn java.lang.invoke.StringConcatFactory.**
+-dontwarn kotlinx.serialization.**
