@@ -1,5 +1,8 @@
 package com.example.core.data.network.model
 
+import androidx.annotation.Keep
+
+@Keep
 data class BlogDTO(
     val id: String?,
     val image: String?,
