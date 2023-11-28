@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id ("kotlin-kapt")
     id ("dagger.hilt.android.plugin")
+    id("com.google.devtools.ksp")
 }
 
 apply(from = "../shared_dependencies.gradle")

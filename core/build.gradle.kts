@@ -4,6 +4,7 @@ plugins {
     id ("kotlin-kapt")
     id ("dagger.hilt.android.plugin")
     id ("kotlin-parcelize")
+    id("com.google.devtools.ksp")
 }
 
 apply(from = "../shared_dependencies.gradle")
@@ -56,7 +57,7 @@ hilt {
 dependencies {
     // Room
     implementation ("androidx.room:room-runtime:2.4.2")
-    kapt ("androidx.room:room-compiler:2.4.2")
+    ksp ("androidx.room:room-compiler:2.4.2")
     implementation ("androidx.room:room-ktx:2.4.2")
     implementation("androidx.room:room-paging:2.5.0-alpha01")
     implementation ("androidx.sqlite:sqlite-ktx:2.3.1")
