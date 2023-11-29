@@ -36,7 +36,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import coil.compose.rememberImagePainter
+import coil.compose.rememberAsyncImagePainter
 import com.example.core.domain.model.Blog
 import com.example.jetblogca.screen.home.CircularImage
 
@@ -88,7 +88,7 @@ fun DetailScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(300.dp),
-                painter = rememberImagePainter(data = blog.image),
+                painter = rememberAsyncImagePainter(model = blog.image),
                 contentDescription = null,
                 contentScale = ContentScale.Crop
             )

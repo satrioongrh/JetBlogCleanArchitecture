@@ -21,7 +21,7 @@ abstract class SafeApiRequest {
                 } catch (e: JSONException) {
                 }
             }
-            Log.d("TAG", "safeApiRequest: ${message.toString()}")
+            Log.d("TAG", "safeApiRequest: $message")
             throw ApiException(message.toString())
         }
     }

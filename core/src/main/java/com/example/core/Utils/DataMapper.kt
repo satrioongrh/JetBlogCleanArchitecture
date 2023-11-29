@@ -48,11 +48,11 @@ fun OwnerDTO.toEntity(): OwnerEntity {
 
 fun OwnerEntity.toDomain(): Owner {
     return Owner(
-        firstName ?: "",
-        id ?: "",
-        lastName ?: "",
-        picture ?: "",
-        title ?: ""
+        firstName,
+        id,
+        lastName,
+        picture,
+        title
     )
 }
 
@@ -68,11 +68,11 @@ fun OwnerDTO.toDomain(): Owner {
 
 fun Owner.toEntity(): OwnerEntity {
     return OwnerEntity(
-        firstName ?: "",
-        id ?: "",
-        lastName ?: "",
-        picture ?: "",
-        title ?: ""
+        firstName,
+        id,
+        lastName,
+        picture,
+        title
     )
 }
 
@@ -97,24 +97,24 @@ object DataMapper {
     fun mapEntitiesToDomain(input: List<BlogEntity>): List<Blog> =
         input.map {
             Blog(
-                id = it.id ?: "",
-                image = it.image ?: "",
-                likes = it.likes ?: 0,
-                owner = it.owner.toDomain() ?: Owner("", "", "", "", ""),
-                publishDate = it.publishDate ?: "",
-                tags = it.tags ?: emptyList(),
-                text = it.text ?: "",
+                id = it.id,
+                image = it.image,
+                likes = it.likes,
+                owner = it.owner.toDomain(),
+                publishDate = it.publishDate,
+                tags = it.tags,
+                text = it.text,
                 isFavorite = it.isFavorite
             )
         }
 
     fun mapDomainToEntity(input: Blog) = BlogEntity(
-        id = input.id ?: "",
-        image = input.image ?: "",
-        likes = input.likes ?: 0,
-        owner = input.owner.toEntity() ?: OwnerEntity("", "", "", "", ""),
-        publishDate = input.publishDate ?: "",
-        tags = input.tags ?: emptyList(),
-        text = input.text ?: ""
+        id = input.id,
+        image = input.image,
+        likes = input.likes,
+        owner = input.owner.toEntity(),
+        publishDate = input.publishDate,
+        tags = input.tags,
+        text = input.text
     )
 }

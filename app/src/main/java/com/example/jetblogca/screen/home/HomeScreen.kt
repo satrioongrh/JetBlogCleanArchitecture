@@ -38,7 +38,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import coil.compose.rememberImagePainter
+import coil.compose.rememberAsyncImagePainter
 import com.example.core.domain.model.Blog
 import com.example.jetblogca.navigation.Screen
 
@@ -124,7 +124,7 @@ fun PostItem(it: Blog, onClick: () -> Unit) {
             modifier = Modifier
                 .fillMaxWidth()
                 .height(300.dp),
-            painter = rememberImagePainter(data = it.image), contentDescription = null,
+            painter = rememberAsyncImagePainter(model = it.image), contentDescription = null,
             contentScale = ContentScale.Crop
         )
         Text(
@@ -145,7 +145,7 @@ fun CircularImage(width: Double, height: Double, radius: Double, imageUrl: Strin
             .height(height = height.dp), shape = RoundedCornerShape(radius.dp)
     ) {
         Image(
-            painter = rememberImagePainter(data = imageUrl), contentDescription = null,
+            painter = rememberAsyncImagePainter(model = imageUrl), contentDescription = null,
             contentScale = ContentScale.Crop
         )
     }
